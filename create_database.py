@@ -1,13 +1,20 @@
-from langchain.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema import Document
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain.vectorstores.chroma import Chroma
 import os
 import shutil
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if OPENAI_API_KEY is None:
+    raise ValueError("OPENAI_API_KEY is not set in the environment variables")
+
 CHROMA_PATH = "chroma"
 DATA_PATH = "data/books"
+
+OPENAI_API_KEY = "sk-proj-QSssy5kuzH0cEsP7UzGFT3BlbkFJQqrHn76Nts5Mbv5xRgzD"
+embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
 
 def main():
