@@ -13,7 +13,6 @@ if OPENAI_API_KEY is None:
 CHROMA_PATH = "chroma"
 DATA_PATH = "data/books"
 
-OPENAI_API_KEY = "sk-proj-QSssy5kuzH0cEsP7UzGFT3BlbkFJQqrHn76Nts5Mbv5xRgzD"
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
 
