@@ -19,3 +19,10 @@ python query_data.py "How does Alice meet the Mad Hatter?"
 ```
 
 You'll also need to set up an OpenAI account (and set the OpenAI key in your environment variable) for this to work.
+
+```bash
+conda env config vars set OPENAI_API_KEY=key
+conda deactivate
+conda activate ragenv
+echo $OPENAI_API_KEY
+```
